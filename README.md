@@ -1,7 +1,7 @@
 
      main.cpp  --  AIS Decoder
      
-     Decodes demodulated GMSK AIS data to AIS sentences.
+     Demodulates GMSK encoded AIS data to AIS sentences.
  
      
      Based on aisdecoder from  Astra Paging Ltd / AISHub (info@aishub.net)  
