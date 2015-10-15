@@ -4,11 +4,11 @@
      Decodes demodulated GMSK AIS data to AIS sentences.
  
      
-     Based on aisdecoder from  Astra Paging Ltd / AISHub (info@aishub.net) 
+     Based on aisdecoder from  Astra Paging Ltd / AISHub (info@aishub.net)  
+     
+     http://forum.aishub.net/ais-decoder/ais-decoder-beta-release/ 
        
-  Modified by Pocket Mariner 2015 to support serial/USB out on BeagleBone and tcp sockets as well as udp sockets
-  Retries (rather than fails)  if network connection is required and socket is closed or not open
-  ingores write fails with SIGNAL
+Modified by Pocket Mariner (C) 2015 to read directly from a fifo and not depend on audio (e.g. pulse) and to support tcp sockets as well as udp sockets. Also serial/USB out on BeagleBone (-n option). Retries (rather than fails)  if network connection is required and socket is closed or not open. Ingores write fails with SIGNAL
  
      AISDecoder is free software; you can redistribute it and/or modify
      it under the terms of the GNU General Public License as published by
