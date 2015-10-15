@@ -1,8 +1,10 @@
 
      main.cpp  --  AIS Decoder
+     
+     Decodes demodulated GMSK AIS data to AIS sentences.
  
-     Copyright (C) 2013
-       Astra Paging Ltd / AISHub (info@aishub.net) and Copyright (C) 2015 Pocket Mariner Ltd.
+     
+     Based on aisdecoder from  Astra Paging Ltd / AISHub (info@aishub.net) 
        
   Modified by Pocket Mariner 2015 to support serial/USB out on BeagleBone and tcp sockets as well as udp sockets
   Retries (rather than fails)  if network connection is required and socket is closed or not open
@@ -22,6 +24,15 @@ cd build
 cmake ../ -DCMAKE_BUILD_TYPE=RELEASE
 make
 
+To run:- (reads sound data from /tmp/aisfifo)
+
+
+#Have aisdecoder listen to a fifo
+rm /tmp/aisfifo
+mkfifo /tmp/aisfifo
+./aisdecoder -h 54.225.113.225 -p 7011 -t 1 -n /dev/ttyO1 -d -f /tmp/aisfifo
+
+then startup rtl_fm or gun-radio to output demodulated AIS data to the fifo (e.g. /tmp/aisfifo)
 
  
  
